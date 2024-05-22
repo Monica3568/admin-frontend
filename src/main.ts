@@ -7,8 +7,16 @@ import 'element-plus/dist/index.css'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 //引入svg图标
 import 'virtual:svg-icons-register'
+import GlobalComponents from '@/components'
+import '@/styles/index.scss'
+import pinia from './store'
+//引入路由
+import router from '@/router'
 const app = createApp(App)
-
+//注册全局组件
+app.use(GlobalComponents)
+app.use(router)
+app.use(pinia)
 app.use(ElementPlus, {
   locale: zhCn,
 })
