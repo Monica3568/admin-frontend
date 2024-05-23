@@ -4,16 +4,25 @@
 //左侧的菜单的宽度
 $base-menu-width: 260px;
 //左侧菜单的背景颜色
-$base-menu-background: #001529;
+$base-menu-background: #304156;
 $base-menu-min-width: 50px;
 
 // 顶部导航的高度
-$base-tabbar-height: 50px;
+$base-tabbar-height: 60px;
 
 //左侧菜单logo高度设置
-$base-menu-logo-height: 50px;
+$base-menu-logo-height: 60px;
 
 //左侧菜单logo右侧文字大小
-$base-logo-title-fontSize: 20px;
+$base-logo-title-fontSize: 15px;
 
-$color: red;
+:root {
+  --el-color-primary: #409EFF;
+  --el-color-success: #67C23A;
+  --el-color-warning: #E6A23C;
+  --el-color-danger: #F56C6C;
+  --el-color-info: #909399;
+  --el-color-white: #FFFFFF;
+  --el-bg-color: #F2F6FC;
+  /* 默认背景颜色 */
+}

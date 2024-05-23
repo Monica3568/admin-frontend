@@ -5,11 +5,14 @@ import { reqLogin } from '@/api/user'
 import type { loginForm, loginResponseData } from '@/api/user/type'
 import type { UserState } from './types/type'
 import { GET_TOKEN, SET_TOKEN } from '@/utils/token'
+//引入常量路由
+import { constantRoute } from '@/router/routes'
 
 let useUserStore = defineStore('user', {
   state: (): UserState => {
     return {
-      token: GET_TOKEN(),
+      token: GET_TOKEN(), //用户唯一标识
+      menuRoutes: constantRoute, //仓库存储生成菜单需要得数组
     }
   },
   // 修改state的唯一方式就是通过actions

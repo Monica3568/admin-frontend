@@ -1,20 +1,39 @@
 <template>
   <div class="login_container">
     <el-row>
-      <el-col :span="12" :xs="0">
-      </el-col>
+      <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
-        <el-form class="login_form" :model="loginForm" :rules="rules" ref="loginFormRef">
+        <el-form
+          class="login_form"
+          :model="loginForm"
+          :rules="rules"
+          ref="loginFormRef"
+        >
           <h2>后台管理系统</h2>
           <el-form-item prop="username">
-            <el-input :prefix-icon="User" v-model="loginForm.username" placeholder="请输入用户名"></el-input>
+            <el-input
+              :prefix-icon="User"
+              v-model="loginForm.username"
+              placeholder="请输入用户名"
+            ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input :prefix-icon="Lock" show-password v-model="loginForm.password" type="password"
-              placeholder="请输入密码"></el-input>
+            <el-input
+              :prefix-icon="Lock"
+              show-password
+              v-model="loginForm.password"
+              type="password"
+              placeholder="请输入密码"
+            ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button :loading class="login_btn" @click="login" @keydown.enter="keyDown()" type="primary">
+            <el-button
+              :loading
+              class="login_btn"
+              @click="login"
+              @keydown.enter="keyDown()"
+              type="primary"
+            >
               登录
             </el-button>
           </el-form-item>
@@ -43,8 +62,6 @@ let loginForm = reactive({
 
 let loginFormRef = ref()
 
-
-
 onMounted(() => {
   document.addEventListener('keydown', keyDown)
 })
@@ -54,7 +71,6 @@ onUnmounted(() => {
 })
 
 let loading = ref(false)
-
 
 //自定义校验规则
 //rule: 当前的校验规则
@@ -104,12 +120,10 @@ const rules = reactive({
     //validator: 自定义校验规则
     //min: 最小长度
     //max: 最大长度
-    { validator: validatorUsername, trigger: 'change' }],
-  password: [
-    { validator: validatorPassword, trigger: 'blur' },
+    { validator: validatorUsername, trigger: 'change' },
   ],
+  password: [{ validator: validatorPassword, trigger: 'blur' }],
 })
-
 
 const login = async () => {
   //表单校验
@@ -147,7 +161,6 @@ const keyDown = (e) => {
       }
     })
   }
-
 }
 
 onMounted(() => {
